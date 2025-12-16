@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Currency Converter</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Currency Converter</h1>
+
+    <div class="converter-card">
+        <div class="input-group">
+            <span class="label">Amount</span>
+            <div class="input-row">
+                <div class="currency-select">
+                    <img src="https://flagsapi.com/SG/flat/64.png" alt="flag" id="from-flag">
+                    <select id="from-currency">
+                        <option value="SGD" selected>SGD</option>
+                        <option value="USD">USD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="RUB">RUB</option>
+                        <option value="KGS">KGS</option>
+                        <option value="GBP">GBP</option>
+                        <option value="JPY">JPY</option>
+                        <option value="CNY">CNY</option>
+                        <option value="KZT">KZT</option>
+                    </select>
+                    <i class="fas fa-chevron-down select-arrow"></i>
+                </div>
+                <input type="number" class="amount-input" id="amount" value="1000.00">
+            </div>
+        </div>
+
+        <div class="swap-container">
+            <button class="swap-btn" id="swap-btn">
+                <i class="fas fa-exchange-alt" style="transform: rotate(90deg);"></i>
+            </button>
+        </div>
+
+        <div class="input-group">
+            <span class="label">Converted Amount</span>
+            <div class="input-row">
+                <div class="currency-select">
+                    <img src="https://flagsapi.com/US/flat/64.png" alt="flag" id="to-flag">
+                    <select id="to-currency">
+                        <option value="USD" selected>USD</option>
+                        <option value="SGD">SGD</option>
+                        <option value="EUR">EUR</option>
+                        <option value="RUB">RUB</option>
+                        <option value="KGS">KGS</option>
+                        <option value="GBP">GBP</option>
+                        <option value="JPY">JPY</option>
+                        <option value="CNY">CNY</option>
+                        <option value="KZT">KZT</option>
+                    </select>
+                    <i class="fas fa-chevron-down select-arrow"></i>
+                </div>
+                <input type="text" class="amount-input" id="result" value="736.70" readonly>
+            </div>
+        </div>
+
+        <div class="rate-info">
+            <div class="rate-label">Indicative Exchange Rate</div>
+            <div class="rate-value" id="rate-text">1 SGD = 0.7367 USD</div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+/* Обнуление и базовые настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+:root {
+    --primary-blue: #1a237e; /* Темно-синий заголовок */
+    --accent-blue: #283593;  /* Цвет кнопки */
+    --bg-gradient: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+    --input-bg: #eeeeee;
+    --text-gray: #757575;
+    --card-white: #ffffff;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: var(--bg-gradient);
+    padding: 20px;
+}
+
+h1 {
+    color: var(--primary-blue);
+    margin-bottom: 30px;
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+/* Карточка конвертера */
+.converter-card {
+    width: 100%;
+    max-width: 450px;
+    background: var(--card-white);
+    border-radius: 25px;
+    padding: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+/* Стили для рядов ввода */
+.input-group {
+    margin-bottom: 20px;
+}
+
+.label {
+    font-size: 0.9rem;
+    color: var(--text-gray);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.input-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Блок выбора валюты */
+.currency-select {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.currency-select img {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 1px solid #eee;
+}
+
+.currency-select select {
+    border: none;
+    background: transparent;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--primary-blue);
+    cursor: pointer;
+    appearance: none; /* Убираем стандартную стрелку */
+    padding-right: 20px;
+    outline: none;
+}
+
+/* Кастомная стрелочка для селекта */
+.select-arrow {
+    position: absolute;
+    right: 0;
+    pointer-events: none;
+    color: var(--text-gray);
+    font-size: 0.8rem;
+}
+
+/* Поле ввода суммы */
+.amount-input {
+    width: 160px;
+    padding: 15px;
+    background: var(--input-bg);
+    border: none;
+    border-radius: 10px;
+    text-align: right;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #333;
+    outline: none;
+}
+
+.amount-input:focus {
+    outline: 2px solid #e0e0e0;
+}
+
+/* Разделитель и кнопка свапа */
+.swap-container {
+    position: relative;
+    height: 1px;
+    background: #e0e0e0;
+    margin: 25px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.swap-btn {
+    position: absolute;
+    background: var(--accent-blue);
+    color: white;
+    border: none;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(40, 53, 147, 0.3);
+}
+
+.swap-btn:hover {
+    transform: rotate(180deg) scale(1.1);
+}
+
+/* Блок с курсом внизу */
+.rate-info {
+    margin-top: 30px;
+}
+
+.rate-label {
+    color: var(--text-gray);
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.rate-value {
+    color: black;
+    font-weight: 600;
+    font-size: 1.1rem;
+}
+
+/* Адаптивность для телефонов */
+@media (max-width: 480px) {
+    .converter-card {
+        padding: 20px;
+    }
+    
+    .input-row {
+        gap: 10px;
+    }
+
+    .amount-input {
+        width: 120px;
+        font-size: 1rem;
+    }
+}
